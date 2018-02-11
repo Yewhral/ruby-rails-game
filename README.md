@@ -8,3 +8,5 @@ I plan to make it as a "game" where you can create an account, build your charac
 Rails version: 5.1.4
 
 Ruby version: 2.4.1
+
+Git config test
