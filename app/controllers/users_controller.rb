@@ -4,9 +4,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)    # Not the final implementation!
+    @user = User.new(user_params)
     if @user.save
-      # Handle a successful save.
+      flash[:registered] = "Your account has been registered!"
+      redirect_to root_path
     else
       render 'new'
     end
