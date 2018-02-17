@@ -40,6 +40,7 @@ group :development, :test do
   gem 'minitest-reporters', '1.1.14'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '1.3.13'
+  gem 'rails-controller-testing'
 end
 
 group :development do
