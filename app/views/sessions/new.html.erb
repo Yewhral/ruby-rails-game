@@ -1,5 +1,8 @@
 <h1>Sessions#new</h1>
 <p>Find me in app/views/sessions/new.html.erb</p>
+<% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+<% end %>
 <div>
   <%= form_for(:session, url: login_path) do |f| %>
       <%= f.label :email %>
@@ -9,7 +12,13 @@
       <%= f.password_field :password %>
 
       <%= f.submit "Log in" %>
-  <% end %>
+
+      <%= f.label :remember_me do %>
+          <%= f.check_box :remember_me %>
+          <span>Remember me on this computer</span>
+      <% end %>
+
+<% end %>
 
   <p>New user? <%= link_to "Sign up now!", register_path %></p>
 </div>

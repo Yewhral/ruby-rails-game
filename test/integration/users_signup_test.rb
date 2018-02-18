@@ -24,7 +24,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       post users_path, params: {
           user: {
               name: "Example User",
-              email: "user@example.com",
+              email: "user@ejxample.com",
               password: "password",
               password_confirmation: "password"
           }
