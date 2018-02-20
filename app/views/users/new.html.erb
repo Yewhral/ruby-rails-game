@@ -1,19 +1,25 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-<%= form_for(@user, url: register_path) do |f| %>
-    <%= render 'shared/error_messages' %>
+<%= render 'shared/banner' %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+<div class="game-container">
 
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+  <%= render 'shared/navigation' %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <%= form_for(@user, url: register_path) do |f| %>
+      <%= render 'shared/error_messages' %>
 
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
 
-    <%= f.submit "Create my account" %>
-<% end %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account" %>
+  <% end %>
+
+</div>
