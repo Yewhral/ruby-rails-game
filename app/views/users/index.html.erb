@@ -1,0 +1,25 @@
+<!-- Remake from users to characters later, edit into admin user management panel -->
+
+<%= render 'shared/banner' %>
+
+<div class="game-container">
+
+  <%= render 'shared/navigation' %>
+
+
+  <%= will_paginate %>
+
+
+  <ul class="users">
+    <% @users.each do |user| %>
+        <li>
+          <%= link_to user.name, user %>
+        </li>
+    <% end %>
+  </ul>
+
+
+  <%= will_paginate %>
+
+
+</div>
