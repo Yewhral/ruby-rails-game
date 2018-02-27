@@ -14,7 +14,7 @@ User.create!(name:  "Example User",
              activated_at: Time.zone.now)
 
 4.times do |n|
-  name  = Faker::Name.name[7..15]
+  name  = Faker::Name.name[6..18]
   email = "admin#{n+1}@example.com"
   password = "admin#{n+1}"
   User.create!(name:  name,
@@ -27,7 +27,7 @@ User.create!(name:  "Example User",
 end
 
 20.times do |n|
-  name  = Faker::Name.name[7..15]
+  name  = Faker::Name.name[6..18]
   email = "user#{n+1}@example.com"
   password = "password#{n+1}"
   User.create!(name:  name,
