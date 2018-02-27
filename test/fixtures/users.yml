@@ -3,8 +3,13 @@ pikeman:
   email: pikeman@example.com
   password_digest: <%= User.digest('password') %>
   admin: true
+  activated: true,
+  activated_at: <%= Time.zone.now %>
+
 
 archer:
   name: Archer Example
   email: archer@example.gov
   password_digest: <%= User.digest('password') %>
+  activated: true,
+  activated_at: <%= Time.zone.now %>
