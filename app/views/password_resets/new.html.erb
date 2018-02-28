@@ -1,0 +1,18 @@
+<%= render 'shared/banner' %>
+
+<div class="game-container">
+
+  <%= render 'shared/navigation' %>
+  <div>
+    <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.submit "Submit" %>
+    <% end %>
+  </div>
+
+</div>
