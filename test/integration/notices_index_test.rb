@@ -10,6 +10,7 @@ class NoticesIndexTest < ActionDispatch::IntegrationTest
     log_in_as(@admin)
     get notices_path
     assert_template 'notices/index'
+    assert_select 'h1', text: 'Messages board'
     Notice.paginate(page: 1).each do |notice|
       assert_select 'a[href=?]', user_path(notice.user), text: notice.user.name
     end

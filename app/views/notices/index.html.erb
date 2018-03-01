@@ -4,18 +4,17 @@
   <%= render 'shared/navigation' %>
 
   <div>
-    <% if @notices.any? %>
-
-        <ol class="notices">
-          <%= render @notices %>
-        </ol>
-
-        <%= will_paginate %>
-
-    <% else %>
-        Noone posted anything yet.
-
-    <% end %>
+    <h1>Messages board</h1>
+    <div>
+      <% if @notices.any? %>
+          <ol class="notices">
+            <%= render @notices %>
+          </ol>
+          <%= will_paginate %>
+      <% else %>
+          Noone posted anything yet.
+      <% end %>
+    </div>
   </div>
 
 </div>

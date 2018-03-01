@@ -17,3 +17,11 @@ tax:
   content: "I announce that everyone must pay 2 lettuces as a tax this month!"
   created_at: <%= Time.zone.now %>
   user: pikeman
+
+
+<% 10.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: archer
+<% end %>
