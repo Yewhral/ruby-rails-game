@@ -1,12 +1,12 @@
-<h1>Sample App</h1>
+<h1>Sanctum of Snow</h1>
 
 <p>Hi <%= @user.name %>,</p>
 
 <p>
-  Welcome to the Test game App! Click on the link below to activate your account:
+  Welcome to the Sanctum of Snow! Click on the link below to activate your account:
 </p>
 
-<%= link_to "Activate", edit_account_activation_url(
+<%= link_to "Activate and begin your adventure!", edit_account_activation_url(
     @user.activation_token,
     email: @user.email)
 %>
