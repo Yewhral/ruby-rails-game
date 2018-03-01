@@ -1,0 +1,11 @@
+<li id="notice-<%= notice.id %>">
+  <div class="content">
+    <%= notice.content %>
+  </div>
+  <span class="author">
+    <%= link_to notice.user.name, notice.user %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(notice.created_at) %> ago.
+  </span>
+</li>

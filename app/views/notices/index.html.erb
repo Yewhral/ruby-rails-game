@@ -1,0 +1,21 @@
+<%= render 'shared/banner' %>
+
+<div class="game-container">
+  <%= render 'shared/navigation' %>
+
+  <div>
+    <% if @notices.any? %>
+
+        <ol class="notices">
+          <%= render @notices %>
+        </ol>
+
+        <%= will_paginate %>
+
+    <% else %>
+        Noone posted anything yet.
+
+    <% end %>
+  </div>
+
+</div>

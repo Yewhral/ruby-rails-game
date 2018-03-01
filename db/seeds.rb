@@ -37,3 +37,9 @@ end
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(3)
+4.times do
+  content = Faker::Lorem.sentence(4)
+  users.each { |user| user.notices.create!(content: content) }
+end
