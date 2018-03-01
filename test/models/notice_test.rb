@@ -3,7 +3,7 @@ require 'test_helper'
 class NoticeTest < ActiveSupport::TestCase
   def setup
     @user = users(:pikeman)
-    @notice = Notice.new(content: "Test message", user_id: @user.id)
+    @notice = @user.notices.build(content: "Test message")
   end
 
   test "should be valid" do
@@ -23,6 +23,10 @@ class NoticeTest < ActiveSupport::TestCase
   test "content should be at most 120 characters" do
     @notice.content = "a" * 121
     assert_not @notice.valid?
+  end
+
+  test "order should be most recent first" do
+    assert_equal notices(:tax), Notice.first
   end
 
 end

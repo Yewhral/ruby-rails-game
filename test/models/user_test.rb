@@ -63,5 +63,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember,'')
   end
 
+  test "associated notices should be destroyed" do
+    @user.save
+    @user.notices.create!(content: "Lorem ipsum")
+    assert_difference 'Notice.count', -1 do
+      @user.destroy
+    end
+  end
+
 
 end

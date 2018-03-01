@@ -1,9 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+monster:
+  content: "Looking for someone to defeat dragon!"
+  created_at: <%= 10.minutes.ago %>
 
-one:
-  content: MyText
-  user: one
+poem:
+  content: "Big are the mountains, cold are the seas. Thin are my trousers, frozen are my knees..."
+  created_at: <%= 3.years.ago %>
 
-two:
-  content: MyText
-  user: two
+contest:
+  content: "New tournament will be held soon!"
+  created_at: <%= 2.hours.ago %>
+
+tax:
+  content: "I announce that everyone must pay 2 lettuces as a tax this month!"
+  created_at: <%= Time.zone.now %>
