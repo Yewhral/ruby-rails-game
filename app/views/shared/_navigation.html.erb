@@ -1,19 +1,27 @@
-<nav>
-  <ul class="nav">
-    <li><%= link_to "Home",   root_path %></li>
-    <li><%= link_to "Help",  help_path %></li>
-    <li><%= link_to "About", about_path %></li>
-    <li><%= link_to "Contact", contact_path %></li>
-    <% if logged_in? %>
-       <li><%= current_user.name %></li>
-       <li><%= link_to "Players", users_path %></li>
-       <li><%= link_to "Profile", current_user %></li>
-        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-        <li> <%= link_to "Log out", logout_path, method: :delete %></li>
+<nav class="<%= logged_in? ? 'navigation-big' : 'navigation' %>">
+  <p class="nav-part-name">Account</p>
+  <% if logged_in? %>
+      <ul class="nav">
+        <li><%= current_user.name %></li>
+        <li><%= link_to "Profile", current_user, class:'nav-link' %></li>
+        <li><%= link_to "Settings", edit_user_path(current_user), class:'nav-link' %></li>
+        <li><%= link_to "Log out", logout_path, method: :delete, class:'nav-link' %></li>
+      </ul>
+      <p class="nav-part-name">Shortcuts</p>
+      <ul class="nav">
+        <li><%= link_to "Players", users_path, class:'nav-link' %></li>
+      </ul>
     <% else %>
-        <li><%= link_to "Log in", login_path %></li>
-        <li><%= link_to "Register", register_path %></li>
+      <ul class="nav">
+        <li><%= link_to "Log in", login_path, class:'nav-link' %></li>
+        <li><%= link_to "Register", register_path, class:'nav-link' %></li>
+      </ul>
     <% end %>
+  <p class="nav-part-name">Info</p>
+  <ul class="nav">
+    <li><%= link_to "Home", root_path, class:'nav-link' %></li>
+    <li><%= link_to "Help", help_path, class:'nav-link' %></li>
+    <li><%= link_to "About", about_path, class:'nav-link' %></li>
+    <li><%= link_to "Contact", contact_path, class:'nav-link' %></li>
   </ul>
 </nav>
-                                                                                                                                                                                                                                                                          </header>

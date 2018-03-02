@@ -1,7 +1,37 @@
 @import "../colors.scss";
 
-.nav {
-  width: 200px;
-  background: $grey2;
-  margin: 0;
+.navigation,
+.navigation-big {
+  min-height: calc(100vh - 250px);
+  box-sizing: border-box;
+  border: 2px solid $blue1;
+
+  .nav {
+    width: 200px;
+    background: $grey2;
+    margin: 0;
+    list-style: none;
+    padding-left: 30px;
+    box-sizing: border-box;
+  }
+
+  .nav-part-name {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $blue6;
+    color: $blue6;
+  }
+
+  .nav-link {
+    color: $blue4;
+    &:hover {
+      color: $blue2;
+    }
+  }
+
+}
+
+.navigation-big {
+  min-height: calc(100vh - 125px);
 }

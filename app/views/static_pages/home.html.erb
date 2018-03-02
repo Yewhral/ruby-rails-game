@@ -7,5 +7,23 @@
 <div class="game-container">
 
 <%= render 'shared/navigation' %>
-  <div> Content </div>
+
+  <% if logged_in? %>
+    <main>
+      <h1>Roadmap</h1>
+      <nav>
+        <div>
+          <p>Links</p>
+          <ul>
+            <li><%= link_to "Message board", notices_path %></li>
+          </ul>
+        </div>
+      </nav>
+    </main>
+  <% else %>
+      <div>
+        Post some basic info here to tell what's this
+      </div>
+  <% end %>
+
 </div>
