@@ -12,7 +12,7 @@ class NoticesIndexTest < ActionDispatch::IntegrationTest
     assert_template 'notices/index'
     assert_select 'h1', text: 'Messages board'
     Notice.paginate(page: 1).each do |notice|
-      assert_select 'a[href=?]', user_path(notice.user), text: notice.user.name
+    assert_select 'a[href=?]', user_path(notice.user), text: notice.user.name
     end
   end
 end

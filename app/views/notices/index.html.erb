@@ -15,6 +15,19 @@
           Noone posted anything yet.
       <% end %>
     </div>
+
+    <%= form_for @notice do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "Message title" %>
+        <%= f.label :content %>
+        <%= f.text_area :content, placeholder: "Message content" %>
+
+        <%= f.submit "Post" %>
+    <% end %>
+
+
   </div>
 
 </div>
