@@ -65,7 +65,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "associated notices should be destroyed" do
     @user.save
-    @user.notices.create!(content: "Lorem ipsum")
+    @user.notices.create!(content: "Lorem ipsum", title: "Lorem")
     assert_difference 'Notice.count', -1 do
       @user.destroy
     end

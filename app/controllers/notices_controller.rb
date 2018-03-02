@@ -19,7 +19,7 @@ class NoticesController < ApplicationController
   private
 
   def notice_params
-    params.require(:notice).permit(:content)
+    params.require(:notice).permit(:content, :title)
   end
 
 

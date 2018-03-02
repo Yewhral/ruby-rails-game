@@ -3,7 +3,7 @@ require 'test_helper'
 class NoticeTest < ActiveSupport::TestCase
   def setup
     @user = users(:pikeman)
-    @notice = @user.notices.build(content: "Test message")
+    @notice = @user.notices.build(content: "Test message", title: "test")
   end
 
   test "should be valid" do
@@ -22,6 +22,16 @@ class NoticeTest < ActiveSupport::TestCase
 
   test "content should be at most 120 characters" do
     @notice.content = "a" * 121
+    assert_not @notice.valid?
+  end
+
+  test "title should be present" do
+    @notice.title = "   "
+    assert_not @notice.valid?
+  end
+
+  test "title should be bax 40 characters" do
+    @notice.title = "a" * 41
     assert_not @notice.valid?
   end
 

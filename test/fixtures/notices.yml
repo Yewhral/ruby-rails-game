@@ -1,19 +1,23 @@
 monster:
+  title: "Monster"
   content: "Looking for someone to defeat dragon!"
   created_at: <%= 10.minutes.ago %>
   user: pikeman
 
 poem:
+  title: "Poem"
   content: "Big are the mountains, cold are the seas. Thin are my trousers, frozen are my knees..."
   created_at: <%= 3.years.ago %>
   user: pikeman
 
 contest:
+  title: "Tournament"
   content: "New tournament will be held soon!"
   created_at: <%= 2.hours.ago %>
   user: pikeman
 
 tax:
+  title: "Pay taxes"
   content: "I announce that everyone must pay 2 lettuces as a tax this month!"
   created_at: <%= Time.zone.now %>
   user: pikeman
@@ -21,6 +25,7 @@ tax:
 
 <% 10.times do |n| %>
 micropost_<%= n %>:
+  title: "test post"
   content: <%= Faker::Lorem.sentence(5) %>
   created_at: <%= 42.days.ago %>
   user: archer

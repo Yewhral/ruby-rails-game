@@ -40,6 +40,7 @@ end
 
 users = User.order(:created_at).take(3)
 4.times do
+  title = Faker::Lorem.sentence(1)
   content = Faker::Lorem.sentence(4)
-  users.each { |user| user.notices.create!(content: content) }
+  users.each { |user| user.notices.create!(content: content, title: title) }
 end
