@@ -11,4 +11,8 @@
   <span class="timestamp">
     Posted <%= time_ago_in_words(notice.created_at) %> ago.
   </span>
+  <% if current_user?(notice.user) || current_user.admin? %>
+      <%= link_to "delete", notice, method: :delete,
+                  data: { confirm: "You sure?" } %>
+  <% end %>
 </li>
