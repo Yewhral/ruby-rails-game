@@ -1,16 +1,7 @@
-<div class="game-container">
+<%= will_paginate %>
 
-  <%= render 'shared/navigation' %>
+<ul class="users">
+  <%= render @users %>
+</ul>
 
-
-  <%= will_paginate %>
-
-
-  <ul class="users">
-    <%= render @users %>
-  </ul>
-
-
-  <%= will_paginate %>
-
-</div>
+<%= will_paginate %>

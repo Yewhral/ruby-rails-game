@@ -1,31 +1,23 @@
-<div class="game-container">
-  <%= render 'shared/navigation' %>
-
+<h1>Messages board</h1>
   <div>
-    <h1>Messages board</h1>
-    <div>
-      <% if @notices.any? %>
-          <ol class="notices">
-            <%= render @notices %>
+    <% if @notices.any? %>
+      <ol class="notices">
+        <%= render @notices %>
           </ol>
-          <%= will_paginate %>
-      <% else %>
-          Noone posted anything yet.
-      <% end %>
-    </div>
-
-    <%= form_for @notice do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-
-        <%= f.label :title %>
-        <%= f.text_field :title, placeholder: "Message title" %>
-        <%= f.label :content %>
-        <%= f.text_area :content, placeholder: "Message content" %>
-
-        <%= f.submit "Post" %>
+      <%= will_paginate %>
+    <% else %>
+      Noone posted anything yet.
     <% end %>
-
-
   </div>
 
-</div>
+<%= form_for @notice do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "Message title" %>
+  <%= f.label :content %>
+  <%= f.text_area :content, placeholder: "Message content" %>
+
+<%= f.submit "Post" %>
+<% end %>
+

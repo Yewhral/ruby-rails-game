@@ -1,23 +1,17 @@
-<div class="game-container">
+<%= form_for(@user, url: register_path) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
 
-  <%= render 'shared/navigation' %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <%= form_for(@user, url: register_path) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account" %>
-  <% end %>
-
-</div>
+  <%= f.submit "Create my account" %>
+<% end %>

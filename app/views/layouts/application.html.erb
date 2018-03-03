@@ -11,7 +11,14 @@
   <body>
     <div class="game-wrapper">
       <%= render 'shared/banner' %>
-      <%= yield %>
+      <div class="game-container">
+
+        <%= render 'shared/navigation' %>
+        <div>
+          <%= yield %>
+        </div>
+
+      </div>
     </div>
   </body>
 </html>
