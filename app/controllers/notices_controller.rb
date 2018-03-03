@@ -22,7 +22,7 @@ class NoticesController < ApplicationController
   def destroy
     @notice.destroy
     flash.now[:success] = "Micropost deleted"
-    redirect_to request.referrer || root_url
+    redirect_to root_url
   end
 
   private
