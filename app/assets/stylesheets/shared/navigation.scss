@@ -2,9 +2,10 @@
 
 .navigation,
 .navigation-big {
-  min-height: calc(100vh - 250px);
+  min-height: calc(100vh - 270px);
   box-sizing: border-box;
   border: 2px solid $blue1;
+  margin: 10px 0 10px 10px;
 
   .nav {
     width: 200px;
@@ -33,5 +34,5 @@
 }
 
 .navigation-big {
-  min-height: calc(100vh - 125px);
+  min-height: calc(100vh - 145px);
 }

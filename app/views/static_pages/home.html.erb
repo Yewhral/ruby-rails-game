@@ -2,19 +2,19 @@
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 <% end %>
 
-
 <% if logged_in? %>
-  <main>
-    <h1>Roadmap</h1>
-    <nav>
-      <div>
-        <p>Links</p>
-        <ul>
-          <li><%= link_to "Message board", notices_path %></li>
-        </ul>
-      </div>
-    </nav>
-  </main>
+  <h1>Roadmap</h1>
+  <nav>
+    <div class="singular">
+      <p>Links</p>
+      <ul>
+        <li><%= link_to "Message board", notices_path %></li>
+      </ul>
+    </div>
+  </nav>
 <% else %>
-  Post some basic info here to tell what's this
+  <div class="singular">
+    <h1>Sanctum of Snow</h1>
+    Post some basic info here to tell what's this
+  </div>
 <% end %>
