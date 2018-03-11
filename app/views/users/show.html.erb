@@ -1,5 +1,7 @@
-<%= @user.name %>, <%= @user.email %>
-<%= @date %>
-<%= @time %>
+<div class="singular">
+  <%= @user.name %>, <%= @user.email %>
+  <%= @date %>
+  <%= @time %>
 
-<h3>Notices (<%= @user.notices.count %>)</h3>
+  <h3>Notices (<%= @user.notices.count %>)</h3>
+</div>

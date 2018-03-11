@@ -1,22 +1,24 @@
-<% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-<% end %>
-
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= link_to "(forgot password)", new_password_reset_path %>
-
-  <%= f.submit "Log in" %>
-
-  <%= f.label :remember_me do %>
-    <%= f.check_box :remember_me %>
-    <span>Remember me on this computer</span>
+<div class="singular">
+  <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
   <% end %>
 
-<% end %>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-<p>New user? <%= link_to "Sign up now!", register_path %></p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= link_to "(forgot password)", new_password_reset_path %>
+
+    <%= f.submit "Log in" %>
+
+    <%= f.label :remember_me do %>
+      <%= f.check_box :remember_me %>
+      <span>Remember me on this computer</span>
+    <% end %>
+
+  <% end %>
+
+  <p>New user? <%= link_to "Sign up now!", register_path %></p>
+</div>
