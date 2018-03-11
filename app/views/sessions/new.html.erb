@@ -4,10 +4,10 @@
   <% end %>
 
   <%= form_for(:session, url: login_path) do |f| %>
-    <%= f.label :email %>
+    <%= f.label :email, class: 'user-label' %>
     <%= f.email_field :email %>
 
-    <%= f.label :password %>
+    <%= f.label :password, class: 'user-label' %>
     <%= f.password_field :password %>
     <%= link_to "(forgot password)", new_password_reset_path %>
 
